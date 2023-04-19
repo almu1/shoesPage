@@ -1,0 +1,10 @@
+public class ReviewController {
+   
+    @AuraEnabled(cacheable=true)
+    public static List<Review__c> getReviews(String shoeName) {
+    	
+	    string key ='%' + shoeName + '%';
+        return [SELECT Id, Name, ShoeId__c, CustomerId__c, Rating__c, FittingId__r.Name, FittingId__r.FittingId__c, ReviewFeedback__c
+                FROM Review__c where  ShoeId__r.Name LIKE: key];  
+    }        
+}

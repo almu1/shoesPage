@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}
+
+.slds-card {
+    background: rgb(241, 240, 240);
+}

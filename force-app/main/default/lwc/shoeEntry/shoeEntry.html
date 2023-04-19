@@ -1,0 +1,35 @@
+<template>  
+    <div class='content'>
+        <template if:true={error}>
+            <c-error error={error}></c-error>
+        </template>
+        <template if:true={shoe}>
+            <div>
+                <p class='title'>{shoe.Name}</p>
+                <hr>
+                <img src={shoe.Image__c} width="200" height="200"></img>  
+                <template if:true={showReviews}> 
+                    <div class="reviewInfo">                    
+                            <label>Average Rating: </label>
+                            <input class='readOnlyInput' type='text' value={shoeAvgRating} readonly="readonly"/>
+                            <label>Median Fiting: </label>
+                            <input class='readOnlyInput' type='text' value={shoeMedianFitting} readonly="readonly" />
+                    </div>
+                    <hr>      
+                    <template for:each={bestReviews} for:item="review">
+                        <label key= {review.Id}>Rating: </label> 
+                        <input key= {review.Id} class='readOnlyInput' type='text' value={review.rating} readonly="readonly"/>
+                        <div key={review.Id} class="blockContainter">
+                            <label>Customer {review.customerId} says: </label>
+                            <p>{review.textFeedback}</p>
+                        </div>
+                        <hr key={review.Id}>
+                    </template> 
+                </template>
+                <template if:false={showReviews}>
+                    <p>This product has no reviews yet. Be the first!!!</p>
+                </template>
+            </div>
+        </template>
+    </div> 
+</template>

@@ -1,0 +1,10 @@
+public class ShoeController {
+@AuraEnabled(cacheable=true)
+    public static List<Shoe__c> getShoes() {
+        List<Shoe__c> shoes = new List<Shoe__c> (); //will return emtpy list if no values found
+        return shoes= [
+            SELECT Id, ShoeId__c, Image__c, Name
+            FROM Shoe__c            
+        ];
+    }
+}

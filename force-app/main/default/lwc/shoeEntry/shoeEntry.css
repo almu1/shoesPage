@@ -1,0 +1,31 @@
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.content {  
+    margin: 10px;
+    padding: 8px 8px 12px 8px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 0.25rem;
+    min-height: 1090px;
+}
+
+input {
+    border: 0;
+}
+
+label {
+    color: black;
+    font-weight:bold;
+}
+.reviewInfo {
+    display:grid; 
+    grid-template-columns: 2fr 2fr;
+}
+.blockContainer {
+    display: block;
+}

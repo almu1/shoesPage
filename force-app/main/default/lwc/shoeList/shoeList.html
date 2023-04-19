@@ -1,0 +1,16 @@
+
+<template>
+    <div  class="slds-card slds-var-p-around_x-small">
+        <template if:true={error}>
+            <c-error error={error}></c-error>
+        </template>
+
+        <template if:true={shoesData}>
+            <div class="container">
+                <template for:each={shoesData} for:item="shoe">
+                    <c-shoe-entry key={shoe.Id} shoe={shoe} ></c-shoe-entry>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
